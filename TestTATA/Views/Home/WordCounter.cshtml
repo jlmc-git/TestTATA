@@ -1,0 +1,32 @@
+﻿@model TestTATA.ViewModel.TextToCountWordsViewModel
+@{
+    ViewData["Title"] = "Contador de palabras";
+}
+
+<h1>Contador de palabras</h1>
+<form asp-controller="Home" asp-action="WordCounter" method="post" enctype="multipart/form-data">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="form-group">
+        <label asp-for="Text" class="control-label"></label>
+        <input asp-for="Text" class="form-control" />
+        <span asp-validation-for="Text" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Word" class="control-label"></label>
+        <input asp-for="Word" class="form-control" />
+        <span asp-validation-for="Word" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <p>Resultado: </p>
+        <p>@Model.Result</p>
+    </div>
+
+    
+    <button type="submit" class="btn btn-primary">
+        Calcular
+    </button>
+</form>
+
+<div>
+    <a asp-action="Index"> Volver </a>
+</div>
